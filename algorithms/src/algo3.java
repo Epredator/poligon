@@ -11,32 +11,33 @@ public class algo3 {
   int sum;
   int[] tab = new int[n];
   int[] sortTab;
+  int counter = 0;
 
   int exAlgo(int A[], int N) {
     n = N;
     tab = A;
     sortTab = new int[n];
 
-    for (int i = 0; i < A.length; i++)
-      checkExist(A[i]);
+    for (int num = 0; num < A.length; num++)
+      if (checkExist(A[num]) == false) {
+        sortTab[counter] = A[num];
+        counter++;
+
+      }
     sumSortTab();
 
     return sum;
   }
 
-  private void checkExist(int num) {
-    int counter = 0;
-
-    for (int i = 0; i < tab.length; i++) {
-      boolean duplicateStatus = false;
-      if (sortTab[i] == num)
-        continue;
-      else if (sortTab[i] != num && duplicateStatus == false) {
-        sortTab[counter] = num;
-        duplicateStatus = true;
-        counter++;
+  private boolean checkExist(int num) {
+    boolean status = false;
+    for (int i = 0; i < sortTab.length; i++) {
+      if (sortTab[i] == num) {
+        status = true;
+        break;
       }
     }
+    return status;
   }
 
   private void sumSortTab() {
