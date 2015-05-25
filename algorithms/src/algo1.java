@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * niechaj suma liczb z ogona będzie równa sumie liczb z głowy podanej tablicy int.
+ * niechaj suma liczb z ogona będzie równa sumie liczb z głowy podanej tablicy typu int.
  */
 public class algo1 {
 
