@@ -7,13 +7,13 @@ import java.util.*;
  * <p/>
  * wypisz liczbę, która występuje w ArrayList więcej niż połowę razy, w innym przypadku wyrzuć 1;
  */
-public class algo2 {
+public class Algo2 {
 
   HashMap<Integer, Integer> sortedMap = new HashMap<Integer, Integer>();
   ArrayList<Integer> list = new ArrayList<Integer>();
   int result = -1;
 
-  int exAlgo(ArrayList<Integer> l) {
+  int findMostCommonNumber(ArrayList<Integer> l) {
     list = l;
     sortNumbers();
     findBiggestVal();

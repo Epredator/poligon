@@ -6,14 +6,14 @@
  */
 
 
-public class algo3 {
+public class Algo3 {
   int n = 0;
   int sum;
   int[] tab = new int[n];
   int[] sortTab;
   int counter = 0;
 
-  int exAlgo(int A[], int N) {
+  int sumUniqueValues(int A[], int N) {
     n = N;
     tab = A;
     sortTab = new int[n];

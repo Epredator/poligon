@@ -3,9 +3,9 @@ import java.util.ArrayList;
 /**
  * niechaj suma liczb z ogona będzie równa sumie liczb z głowy podanej tablicy typu int.
  */
-public class algo1 {
+public class Algo1 {
 
-  int exAlgo(int A[], int N) {
+  int splitTableValues(int A[], int N) {
     int headResult = 0;
     int tailResult = 0;
     int p = -1;
