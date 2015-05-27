@@ -6,7 +6,7 @@
  */
 
 
-public class Algo3 {
+public class algo3 {
   int n = 0;
   int sum;
   int[] tab = new int[n];

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @return Result is the smallest value which is occurs in both tables
  * @see java.util.Random#nextInt(int)
  */
-public class Algo4 {
+public class algo4 {
 
   int findMinVal(int[] tab1, int[] tab2){
       Arrays.sort(tab1);

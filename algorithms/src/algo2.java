@@ -7,7 +7,7 @@ import java.util.*;
  * <p/>
  * wypisz liczbę, która występuje w ArrayList więcej niż połowę razy, w innym przypadku wyrzuć 1;
  */
-public class Algo2 {
+public class algo2 {
 
   HashMap<Integer, Integer> sortedMap = new HashMap<Integer, Integer>();
   ArrayList<Integer> list = new ArrayList<Integer>();
