@@ -8,21 +8,15 @@ package sortAlgo;
  */
 public class bubbleSort {
     public int[] bubbleSort(int[] items){
-        boolean swapped;
         int tempInt;
-        do {
-            swapped = false;
+
             for (int i = 1; i < items.length; i++) {
                 if (items[i - 1] > (items[i])) {
                     tempInt = items[i];
                     items[i]=items[i-1];
                     items[i-1]= tempInt;
-                    swapped = true;
                 }
             }
-        } while (swapped != false);
-
-
         return items;
     }
 }
