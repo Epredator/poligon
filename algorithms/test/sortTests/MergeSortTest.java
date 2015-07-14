@@ -1,19 +1,22 @@
+package sortTests;
+
 import org.junit.Assert;
 import org.junit.Test;
-import sortAlgo.InsertionSort;
+import sortAlgo.MergeSort;
 
 /**
- * Created by Adam on 2015-07-13.
+ * Created by Adam on 2015-07-14.
  */
-public class insertionSortTest {
+public class MergeSortTest {
     @Test
     public void firstTest() throws Exception {
-        InsertionSort a = new InsertionSort();
+        MergeSort a = new MergeSort();
         int[] tabBeforeSort;
         int[] tabAfterSort;
         tabBeforeSort = new int[]{1, 5, 3, 4, 6, 7};
         tabAfterSort = new int[]{1, 3, 4, 5, 6, 7};
-        int[] result = a.sort(tabBeforeSort);
-        Assert.assertArrayEquals(tabAfterSort, result);
+        MergeSort.mergeSort(tabBeforeSort, 0, tabBeforeSort.length);
+//        Assert.assertArrayEquals(tabAfterSort, result);
+
     }
 }
