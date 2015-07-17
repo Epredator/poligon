@@ -2,15 +2,17 @@ package sortTests;
 
 import org.junit.Assert;
 import org.junit.Test;
-import sortAlgo.insertionSort;
+import sortAlgo.QuickSort;
 
 /**
- * Created by Adam on 2015-07-13.
+ * Created by Adam on 2015-07-14.
  */
-public class insertionSortTest {
+
+public class QuickSortTest {
+
     @Test
-    public void firstTest() throws Exception {
-        insertionSort a = new insertionSort();
+    public void quickSortTest(){
+        QuickSort a = new QuickSort();
         int[] tabBeforeSort;
         int[] tabAfterSort;
         tabBeforeSort = new int[]{1, 5, 3, 4, 6, 7};
@@ -18,4 +20,5 @@ public class insertionSortTest {
         int[] result = a.sort(tabBeforeSort);
         Assert.assertArrayEquals(tabAfterSort, result);
     }
+
 }
