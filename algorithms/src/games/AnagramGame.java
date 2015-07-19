@@ -11,7 +11,6 @@ public class AnagramGame {
     int sourceSize = 0;
     int excludeChar = -1;
 
-
     public char[] makeAnagram(char[] letters){
         return null;
     }
@@ -23,34 +22,30 @@ public class AnagramGame {
 
 
     public char[] createAnagram(char[] sourceWord) {
-
         this.sourceWord = sourceWord;
         sourceSize = sourceWord.length;
         tempTab = new char[sourceSize];
         char[] newWord = new char[sourceSize];
 
         for(int i=0; i<sourceSize; i++){
-            addCharsToTemp(i);
             Random r = new Random();
-            int randomCharFromSource = r.nextInt(tempTab.length);
-            excludeChar = randomCharFromSource;
-            newWord[i]=tempTab[randomCharFromSource];
+            addCharsToTemp(i);
+            excludeChar = r.nextInt(tempTab.length);
+            newWord[i]=sourceWord[excludeChar];
         }
-
         return newWord;
     }
 
     private void addCharsToTemp(int iterationNumber) {
+        tempTab=null;
         tempTab = new char[sourceSize-iterationNumber];
+        int position =0 ;
 
-            int position =0 ;
-        for(int j=0; j<sourceSize; j++){
-            if (j != excludeChar && tempTab.length > position){
-                    tempTab[position] = sourceWord[j];
+        for(int j=0; j<sourceSize; j++)
+                if (j != excludeChar && tempTab.length > position){
+                    sourceWord[position] = sourceWord[j];
                     position++;
             }
-            }
         }
+}
 
-
-    }
