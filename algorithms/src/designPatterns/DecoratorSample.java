@@ -13,6 +13,8 @@ package designPatterns;
  który ma byæ dekorowany.
  Inaczej jak w przypadku dziedziczenia obiekty dostaj¹ nowe funkcjonalnoœci dynamicznie
  czyli w trakcie dzia³ania programu a nie na etapie kompilacji.
+
+ source: http://www.algorytm.org/wzorce-projektowe
  */
 public class DecoratorSample {
     public static void main(String[] args){
