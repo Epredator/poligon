@@ -1,3 +1,5 @@
+package otherTests;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +12,7 @@ public class algo3Test {
 
 //  @Test
 //  public void EvaluateAlgo3(){
-//    algo3 al = new algo3();
+//    other.algo3 al = new other.algo3();
 //    int[] A = new int[5];
 //
 //    A[0] = 2;

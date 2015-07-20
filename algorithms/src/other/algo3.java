@@ -1,3 +1,5 @@
+package other;
+
 /**
  * User: trojnaradam@gmail.com
  * Date: 23.05.15

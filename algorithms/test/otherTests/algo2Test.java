@@ -1,3 +1,5 @@
+package otherTests;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 public class algo2Test {
 //  @Test
 //  public void evaluatesExpression() {
-//    algo2 al = new algo2();
+//    other.algo2 al = new other.algo2();
 //    ArrayList<Integer> l = new ArrayList<Integer>();
 //    l.add(2);
 //    l.add(2);

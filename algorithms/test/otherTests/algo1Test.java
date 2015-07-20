@@ -1,3 +1,5 @@
+package otherTests;
+
 import org.junit.Test;
 
 /**
@@ -10,7 +12,7 @@ public class algo1Test {
 
 //  @Test
 //  public void evaluatesExpression() {
-//    algo1 al = new algo1();
+//    other.algo1 al = new other.algo1();
 //    int[] A = new int[8];
 //    A[0] = -1;
 //    A[1] = -2;

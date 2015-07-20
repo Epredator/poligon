@@ -1,3 +1,5 @@
+package other;
+
 class Solution {
   int length;
   int[] headTab = new int[length];
