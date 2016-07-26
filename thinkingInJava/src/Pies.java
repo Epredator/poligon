@@ -8,6 +8,14 @@ public class Pies {
   String rasa;
   String imie;
 
+  public static void main(String[] args){
+    Pies pies1 = new Pies();
+    pies1.szczekaj();
+    pies1.imie = "Azoł";
+
+
+  }
+
   void szczekaj(){
     System.out.println("hauu hauu!");
   }
