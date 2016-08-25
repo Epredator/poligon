@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GameOfLife/GameOfLife.iml" filepath="$PROJECT_DIR$/GameOfLife/GameOfLife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TUL/LuceneBooks/LuceneBooks.iml" filepath="$PROJECT_DIR$/TUL/LuceneBooks/LuceneBooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TUL/Mathematical Linguistics projects/Mathematical Linguistics projects.iml" filepath="$PROJECT_DIR$/TUL/Mathematical Linguistics projects/Mathematical Linguistics projects.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/projects.iml" filepath="$PROJECT_DIR$/.idea/projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" filepath="$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NCUT/jprobiX/jprobiX.iml" filepath="$PROJECT_DIR$/NCUT/jprobiX/jprobiX.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" filepath="$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" />
     </modules>
   </component>
