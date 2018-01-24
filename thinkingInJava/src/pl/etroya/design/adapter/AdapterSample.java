@@ -1,5 +1,7 @@
 package pl.etroya.design.adapter;
 
+import java.util.List;
+
 public class AdapterSample
 {
     public static void main(String[] args){
