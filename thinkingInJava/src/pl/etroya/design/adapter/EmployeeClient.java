@@ -9,6 +9,11 @@ public class EmployeeClient {
         List<Employee> employees= new ArrayList<>();
         Employee employeeFromDB = new EmployeeDB("12345", "Stefan", "Testowy", "stefan@mail.pl");
         employees.add(employeeFromDB);
+
+        EmployeeLdap employeeLdap = new EmployeeLdap("chewie", "Solo", "Han", "han.solo@etroya.pl");
+        employees.add(new EmployeeAdapterLdap(employeeLdap));
+
+
         return employees;
     }
 }
