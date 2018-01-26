@@ -13,6 +13,8 @@ public class EmployeeClient {
         EmployeeLdap employeeLdap = new EmployeeLdap("chewie", "Solo", "Han", "han.solo@etroya.pl");
         employees.add(new EmployeeAdapterLdap(employeeLdap));
 
+        EmployeeCsv employeeCsv = new EmployeeCsv("123,Piotr, Wozniakowsky, wozniakowsky@mail.com");
+
 
         return employees;
     }
