@@ -18,4 +18,12 @@ public abstract class MenuComponent {
 
     @Override
     public abstract String toString();
+
+    String print(MenuComponent menuComponent){
+        StringBuilder builder = new StringBuilder(name);
+        builder.append(": ");
+        builder.append(url);
+        builder.append("\n");
+        return builder.toString();
+    }
 }
