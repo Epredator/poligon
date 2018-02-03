@@ -1,4 +1,4 @@
-package pl.etroya.design.flyweught;
+package pl.etroya.design.flyweight;
 
 public class FlyweightEverydaySample {
     public static void main(String args[]){
