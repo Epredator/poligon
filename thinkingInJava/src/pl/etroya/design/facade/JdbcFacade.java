@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcFacade {
-    DbSingleton instance = null;
+    DbDbSingeltonForFacade instance = null;
 
     public JdbcFacade(){
-        instance = DbSingleton.getInstance();
+        instance = DbDbSingeltonForFacade.getInstance();
 
     }
 

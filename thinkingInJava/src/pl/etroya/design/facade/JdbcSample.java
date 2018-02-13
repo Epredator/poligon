@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class JdbcSample {
     public static void main(String args[]){
-        DbSingleton instance = DbSingleton.getInstance();
+        DbDbSingeltonForFacade instance = DbDbSingeltonForFacade.getInstance();
 
         try{
             Connection conn = instance.getConnection();

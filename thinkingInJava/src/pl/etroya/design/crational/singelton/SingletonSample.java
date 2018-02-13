@@ -1,4 +1,4 @@
-package pl.etroya.design.crational.singleton;
+package pl.etroya.design.crational.singelton;
 
 public class SingletonSample {
     public static void main(String args[]){
