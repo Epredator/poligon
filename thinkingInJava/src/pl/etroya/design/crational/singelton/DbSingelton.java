@@ -8,8 +8,12 @@ public class DbSingelton {
     }
 
     public static DbSingelton getInstance() {
-        if(instance.equals(null)){
-            instance = new DbSingelton();
+        if(instance.equals(null)) {
+            synchronized (DbSingelton.class) {
+                if (instance == null) {
+                    instance = new DbSingelton();
+                }
+            }
         }
         return instance;
     }
