@@ -1,6 +1,6 @@
 package pl.etroya.corejava.calcengine;
 
-import pl.etroya.calcengine.MathEquation;
+
 
 public class Main {
     public static void main(String[] args){
