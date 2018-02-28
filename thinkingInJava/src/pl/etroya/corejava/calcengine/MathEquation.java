@@ -1,4 +1,4 @@
-package pl.etroya.calcengine;
+package pl.etroya.corejava.calcengine;
 
 public class MathEquation {
     private double leftVal;

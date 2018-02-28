@@ -9,7 +9,7 @@ public class Main {
         int length;
         Reader reader = null;
         try{
-            reader = Helper.openReader("sampleText.txt");
+            reader = Helper.openReader("file.txt");
             while ((length = reader.read(buff)) >= 0){
                 System.out.println("\nlength: " + length);
                 for(int i=0; i<length; i++)
@@ -25,6 +25,21 @@ public class Main {
             } catch (IOException e2) {
                 System.out.println(e2.getClass().getSimpleName() + " - " + e2.getMessage());
             }
+        }
+    }
+
+    public static void doTryWithResources(){
+        char[] buff = new char[8];
+        int length;
+        try(Reader reader = Helper.openReader("file.txt")){
+
+            while ((length = reader.read(buff)) >= 0){
+                System.out.println("\n length: " + length);
+                for (int i=0; i<length; i++)
+                    System.out.print(buff[i]);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getClass().getSimpleName() + " - " + e.getMessage());
         }
     }
 }
