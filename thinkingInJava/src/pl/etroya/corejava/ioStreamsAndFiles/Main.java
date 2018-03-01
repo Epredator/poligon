@@ -1,12 +1,12 @@
 package pl.etroya.corejava.ioStreamsAndFiles;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.charset.Charset;
+import java.nio.file.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +18,13 @@ public class Main {
                 "Line 3 3 3"
         };
 
-        FileSystem zipFs = openZip(Paths.get("testData.zip"));
+        try(FileSystem zipFs = openZip(Paths.get("testData.zip"))){
+            copyToZip(zipFs);
+            writeToFileInZip1(zipFs, data); //copy file to ZIP traditionally
+            writeToFileInZip2(zipFs, data); //copy file to ZIP new way
+        } catch (Exception e){
+            System.out.println(e.getClass().getSimpleName() + " - " + e.getMessage());
+        }
     }
 
     private static FileSystem openZip(Path zipPath) throws URISyntaxException, IOException {
@@ -31,7 +37,26 @@ public class Main {
 
     }
 
-    private static void copyToZim(FileSystem zipFs) {
+    private static void copyToZip(FileSystem zipFs) throws IOException {
+        Path sourceFile = Paths.get("file.txt");
+        //Path sourceFile = FileSystems.getDefault().getPath("file.txt);
+        Path destFile = zipFs.getPath("/fileCopied.txt");
 
+        Files.copy(sourceFile, destFile, StandardCopyOption.REPLACE_EXISTING);
+
+    }
+
+    private static void writeToFileInZip1(FileSystem zipFs, String[] data) throws IOException {
+        try(BufferedWriter writer = Files.newBufferedWriter(zipFs.getPath("/newFile1.txt"))) {
+            for(String d:data){
+                writer.write(d);
+                writer.newLine();
+            }
+
+        }
+    }
+
+    private static void writeToFileInZip2(FileSystem zipFs, String[] data) throws IOException {
+        Files.write(zipFs.getPath("/newFile2.txt"), Arrays.asList(data), Charset.defaultCharset(), StandardOpenOption.CREATE);
     }
 }
