@@ -1,7 +1,14 @@
 package pl.etroya.stringformatting;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Formatter;
+
+//java formatter class: https://docs.oracle.com/javase/9/docs/api/java/util/Formatter.html (2018.03.04)
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         int david = 13;
         int dawson = 11;
         int gordon = 2;
@@ -29,6 +36,23 @@ public class Main {
         String s11 = String.format("%$3d %$1d %$2d", 100, 200, 300); //out 300 100 200
 
         System.out.println(s4);
+
+        //writing formatted content to a stream
+
+        void doWrite(int a, int b, int c, int d, double p_avgDiff){
+            BufferedWriter writer =  Files.newBufferedWriter(Paths.get("file.txt"));
+
+            try(Formatter f = new Formatter(writer)){
+                f.format("My nephews are %d, %d, %d and %d years old", a, b, c, d);
+                f.format("The average age between each is ", a, b, c, d);
+            }
+        }
+
+
+
+        //regular expression
+        String r1 = "apple, apple and orange please";
+        String r2 = s1.replaceAll("ple\\b", "ricot");
 
     }
 }
