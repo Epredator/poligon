@@ -1,4 +1,4 @@
-package pl.etroya.corejava;
+package pl.etroya.corejava.collection;
 
 import java.util.ArrayList;
 

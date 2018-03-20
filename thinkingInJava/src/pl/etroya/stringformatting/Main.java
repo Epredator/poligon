@@ -33,20 +33,20 @@ public class Main {
 
         //argument index
         String s11 = String.format("%d %d %d", 100, 200, 300);
-        String s11 = String.format("%$3d %$1d %$2d", 100, 200, 300); //out 300 100 200
+        //String s11 = String.format("%$3d %$1d %$2d", 100, 200, 300); //out 300 100 200
 
         System.out.println(s4);
 
         //writing formatted content to a stream
 
-        void doWrite(int a, int b, int c, int d, double p_avgDiff){
-            BufferedWriter writer =  Files.newBufferedWriter(Paths.get("file.txt"));
-
-            try(Formatter f = new Formatter(writer)){
-                f.format("My nephews are %d, %d, %d and %d years old", a, b, c, d);
-                f.format("The average age between each is ", a, b, c, d);
-            }
-        }
+//        void doWrite(int a, int b, int c, int d, double p_avgDiff){
+//            BufferedWriter writer =  Files.newBufferedWriter(Paths.get("file.txt"));
+//
+//            try(Formatter f = new Formatter(writer)){
+//                f.format("My nephews are %d, %d, %d and %d years old", a, b, c, d);
+//                f.format("The average age between each is ", a, b, c, d);
+//            }
+//        }
 
 
 
