@@ -5,6 +5,9 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Adder implements Runnable {
     private String inFile, outFile;
@@ -13,17 +16,15 @@ public class Adder implements Runnable {
         String[] inFiles = {"./fileA.txt, ./fileB.txt, ./fileC.txt, ./fileD.txt, ./fileE.txt"};
         String[] outFiles = {"./fileA.out.txt, ./fileB.out.txt, ./fileC.out.txt, ./fileD.out.txt, ./fileE.out.txt"};
 
-        Thread[] threads = new Thread[inFiles.length];
+        ExecutorService es = Executors.newFixedThreadPool(3);
         for (int i = 0; i < inFiles.length; i++) {
             Adder adder = new Adder(inFiles[i], outFiles[i]);
             adder.doAdd();
-            threads[i] = new Thread(adder);
-            threads[i].start();
+            es.submit(adder);
         }
 
-        for(Thread t :threads){
-            t.join(); //block waiting for thread completion
-        }
+        es.shutdown();
+        es.awaitTermination(60, TimeUnit.SECONDS);
 
     }
 
