@@ -3,12 +3,22 @@ package pl.etroya.corejava.inheritance;
 public class Flight {
     int passengers = 150;
     private int seats = 150;
+    private int flightNumber;
+    private char flightClass;
 
-    int getPassengers(){
+    public Flight(int flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+    public Flight() {
+
+    }
+
+    int getPassengers() {
         return 150;
     }
 
-    int getSeats(){
+    int getSeats() {
         return 150;
     }
 
@@ -25,5 +35,15 @@ public class Flight {
 
     private boolean hasSeating() {
         return passengers < seats;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (super.equals(o)) return true;
+        if (!(o instanceof Flight)) return false;
+
+        Flight other = (Flight) o;
+        return flightClass == other.flightClass && flightNumber == other.flightNumber;
+
     }
 }

@@ -38,6 +38,12 @@ public class Main {
         Flight cf4 = new CargoFlight(); //because reference is to Flight
         System.out.println(cf4.getPassengers()); //return 12
 
+        //create different objects to test how to work constuctor
+        Flight f175 = new Flight(175);
+        CargoFlight cf007 = new CargoFlight();
+        CargoFlight cf294 = new CargoFlight(294);
+        CargoFlight cf878 = new CargoFlight(878, 2000.0f);
+
 
     }
 }
