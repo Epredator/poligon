@@ -46,4 +46,12 @@ public class Flight {
         return flightClass == other.flightClass && flightNumber == other.flightNumber;
 
     }
+
+    @Override
+    public String toString() {
+        if(flightNumber > 0){
+            return "Flight #" + flightNumber;
+        } else
+            return "Flight class " + flightClass;
+    }
 }

@@ -1,10 +1,10 @@
 package pl.etroya.corejava.inheritance;
 
 public class Main {
-    public static void Main(String [] args){
+    public static void main(String[] args) {
         CargoFlight cf = new CargoFlight();
         cf.add1Package(1.0f, 2.3f, 3.0f);
-        Passenger piotr = new Passenger(0,2);
+        Passenger piotr = new Passenger(0, 2);
         cf.add1Pasenger(piotr);
 
 
@@ -43,6 +43,29 @@ public class Main {
         CargoFlight cf007 = new CargoFlight();
         CargoFlight cf294 = new CargoFlight(294);
         CargoFlight cf878 = new CargoFlight(878, 2000.0f);
+
+
+        //String representation
+        System.out.println("My flight is: " + cf878);
+
+        //Exercise with StringBuilder
+        StringBuilder sb = new StringBuilder(30);
+        Flight nameOfFlight = new Flight(555);
+        String location = "Gdansk";
+
+        sb.append("I flew to ");
+        sb.append(location);
+        sb.append(" on " + nameOfFlight);
+
+        //find position of text to write in
+        int time = 8;
+        int pos = sb.length() - " on ".length() - nameOfFlight.toString().length();
+
+        sb.insert(pos, " at ");
+        sb.insert(pos + 4, time);
+
+        String msg = sb.toString();
+        System.out.println(msg);
 
 
     }
