@@ -1,5 +1,7 @@
 package pl.etroya.corejava.inheritance;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         CargoFlight cf = new CargoFlight();
@@ -66,6 +68,34 @@ public class Main {
 
         String msg = sb.toString();
         System.out.println(msg);
+
+
+        //1 excercice with implementing an Interface
+        Passenger kamil = new Passenger();
+        kamil.setLevelAndDays(1, 180);
+
+        Passenger katarzyna = new Passenger();
+        kamil.setLevelAndDays(1, 90);
+
+        Passenger karol = new Passenger();
+        kamil.setLevelAndDays(2, 180);
+
+        Passenger krystyna = new Passenger();
+        kamil.setLevelAndDays(3, 765);
+
+        Passenger[] passengers = {kamil, katarzyna, karol, krystyna};
+        Arrays.sort(passengers);
+
+        //2 excercice with implementing an Interface
+        Flight flx021 = new Flight();
+        flx021.setFlightTime(32);
+        Flight flx0211 = new Flight();
+        flx0211.setFlightTime(60);
+        Flight flx02211 = new Flight();
+        flx02211.setFlightTime(32);
+        Flight[] flights = {flx021, flx0211, flx02211};
+
+        Arrays.sort(flights);
 
 
     }

@@ -1,10 +1,11 @@
 package pl.etroya.corejava.inheritance;
 
-public class Flight {
+public class Flight implements Comparable {
     int passengers = 150;
     private int seats = 150;
     private int flightNumber;
     private char flightClass;
+    private int flighTime;
 
     public Flight(int flightNumber) {
         this.flightNumber = flightNumber;
@@ -49,9 +50,26 @@ public class Flight {
 
     @Override
     public String toString() {
-        if(flightNumber > 0){
+        if (flightNumber > 0) {
             return "Flight #" + flightNumber;
         } else
             return "Flight class " + flightClass;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Flight f = (Flight) o;
+        if (flighTime > f.flighTime) {
+            return -1;
+        } else if (flighTime < f.flighTime)
+            return 1;
+        else {
+            return 0;
+        }
+    }
+
+    public void setFlightTime(int i) {
+        this.flighTime = i;
+
     }
 }
