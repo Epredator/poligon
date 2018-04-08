@@ -1,11 +1,17 @@
 package pl.etroya.corejava.inheritance;
 
-public class Flight implements Comparable {
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+
+public class Flight implements Comparable<Flight>, Iterable<Person> {
     int passengers = 150;
     private int seats = 150;
     private int flightNumber;
     private char flightClass;
     private int flighTime;
+    private Passenger[] roster;
+    private CrewMember[] crew;
 
     public Flight(int flightNumber) {
         this.flightNumber = flightNumber;
@@ -27,8 +33,22 @@ public class Flight implements Comparable {
         if (hasSeating())
             passengers += 1;
         else handleTooMany();
-
     }
+
+    public void addPasengers(Passenger[] passengers) {
+        if (hasSeating()) {
+            Collection<Passenger> listOfPassengers = Arrays.asList(roster);
+            listOfPassengers.addAll(Arrays.asList(passengers));
+            roster = (Passenger[]) listOfPassengers.toArray();
+        } else handleTooMany();
+    }
+
+    public void addCrewMembers(CrewMember[] crew) {
+        Collection<CrewMember> listOfCrew = Arrays.asList(crew);
+        listOfCrew.addAll(Arrays.asList(crew));
+        crew = (CrewMember[]) listOfCrew.toArray();
+    }
+
 
     private void handleTooMany() {
         System.out.println("Not enough free seats in a plane");
@@ -57,7 +77,7 @@ public class Flight implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Flight o) {
         Flight f = (Flight) o;
         if (flighTime > f.flighTime) {
             return -1;
@@ -72,4 +92,11 @@ public class Flight implements Comparable {
         this.flighTime = i;
 
     }
+
+    @Override
+    public Iterator<Person> iterator() {
+        return new FlightIterator(roster, crew);
+    }
+
+
 }

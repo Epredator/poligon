@@ -8,10 +8,10 @@ import java.util.Collection;
 /**
  * Created by Adam on 2015-07-21.
  *
- * Poni¿ej przyk³ad u¿ycia refleksji do przeprowadzenia analizy obiektów typu Person.
- * Klasa Person jest prost¹ klas¹ która sk³ada siê z pól:
- * name, surname, age, address oraz metod dostêpowych.
- * Dodatkowo klasa Person implementuje interfejs Comparable który umo¿liwia porównywanie obiektów miêdzy sob¹.
+ * Ponizej przyklad uzycia refleksji do przeprowadzenia analizy obiektow typu Person.
+ * Klasa Person jest prosta klasa ktara sklada sie z pol:
+ * name, surname, age, address oraz metod dostï¿½powych.
+ * Dodatkowo klasa Person implementuje interfejs Comparable ktory umozliwia porownywanie obiektow miedzy soba.
  *
  * source: http://java-programowanie.pl/podstawy/refleksja/analiza-obiektu-za-pomoca-refleksji/
  */
@@ -95,7 +95,7 @@ class Person implements Comparable<Person> {
          _obj = obj;
      }
 
-     //przesy³am metode toString
+     //przesyï¿½am metode toString
      //uzywam mechanizmu  refleksji w celu uzyskania informacji o obiekcie
      public String toString() {
          //pobieram klase obiektu

@@ -70,6 +70,10 @@ public class Main {
         System.out.println(msg);
 
 
+        CrewMember jan = new CrewMember();
+        CrewMember marta = new CrewMember();
+
+
         //1 excercice with implementing an Interface
         Passenger kamil = new Passenger();
         kamil.setLevelAndDays(1, 180);
@@ -96,6 +100,12 @@ public class Main {
         Flight[] flights = {flx021, flx0211, flx02211};
 
         Arrays.sort(flights);
+
+        Flight kax011 = new Flight(11);
+        Passenger[] passengersKax011 = {kamil, katarzyna, karol, krystyna};
+        CrewMember[] crewKax011 = {jan, marta};
+        kax011.addPasengers(passengersKax011);
+        kax011.addCrewMembers(crewKax011);
 
 
     }

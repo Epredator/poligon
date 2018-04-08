@@ -1,6 +1,6 @@
 package pl.etroya.corejava.inheritance;
 
-public final class Passenger implements Comparable {
+public final class Passenger extends Person implements Comparable<Passenger> {
     private int memberLevel; //3 -platinum, 2-gold, 3 -silver types of member
     private int memberDays;
 
@@ -14,7 +14,7 @@ public final class Passenger implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Passenger o) {
         Passenger p = (Passenger) o;
         if (memberLevel > p.memberLevel) {
             return -1;
