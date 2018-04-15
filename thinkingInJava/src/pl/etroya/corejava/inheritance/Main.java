@@ -104,8 +104,13 @@ public class Main {
         Flight kax011 = new Flight(11);
         Passenger[] passengersKax011 = {kamil, katarzyna, karol, krystyna};
         CrewMember[] crewKax011 = {jan, marta};
-        kax011.addPasengers(passengersKax011);
-        kax011.addCrewMembers(crewKax011);
+        //kax011.addPasengers(passengersKax011); TODO analyse & repair
+        //kax011.addCrewMembers(crewKax011); TODO analyse & repair
+
+
+        for(Person p : kax011){
+            System.out.println(p.getName());
+        }
 
 
     }
