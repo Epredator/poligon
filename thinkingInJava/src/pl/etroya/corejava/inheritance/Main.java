@@ -108,9 +108,18 @@ public class Main {
         //kax011.addCrewMembers(crewKax011); TODO analyse & repair
 
 
-        for(Person p : kax011){
-            System.out.println(p.getName());
-        }
+//        for(Person p : kax011){
+//            System.out.println(p.getName());
+//        }
+
+        Flight.resetAllPassengers();
+        System.out.println(Flight.getAllPassengers());
+        Flight lx032 = new Flight();
+        Passenger p = new Passenger();
+        p.setName("Lola");
+        lx032.add1Pasenger(p);
+        System.out.println(Flight.getAllPassengers());
+
 
 
     }

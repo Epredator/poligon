@@ -5,13 +5,22 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class Flight implements Comparable<Flight>, Iterable<Person> {
-    int passengers = 150;
+    int passengers = 140;
     private int seats = 150;
     private int flightNumber;
     private char flightClass;
     private int flighTime;
     private Passenger[] roster;
     private CrewMember[] crew;
+    static int allPassengers;
+
+    public static int getAllPassengers() {
+        return allPassengers;
+    }
+
+    public static int resetAllPassengers() {
+        return allPassengers = 0;
+    }
 
     public Flight(int flightNumber) {
         this.flightNumber = flightNumber;
@@ -30,9 +39,10 @@ public class Flight implements Comparable<Flight>, Iterable<Person> {
     }
 
     public void add1Pasenger(Passenger p) {
-        if (hasSeating())
+        if (hasSeating()) {
             passengers += 1;
-        else handleTooMany();
+            allPassengers += 1;
+        } else handleTooMany();
     }
 
     public void addPasengers(Passenger[] passengers) {
