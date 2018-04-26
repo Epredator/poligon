@@ -5,9 +5,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.logging.*;
 
 public class Main {
+    static Logger logger = Logger.getLogger("pl.etroya.corejava.serialization");
+
     public static void main(String[] args) {
+        Handler h = new ConsoleHandler();
+        Formatter f = new SimpleFormatter();
+        h.setFormatter(f);
+        logger.addHandler(h);
+        logger.setLevel(Level.INFO);
+        logger.log(Level.INFO, "We are logging");
+
         BankAccount acc = new BankAccount("1234", 600);
         acc.deposit(250);
         saveAccount(acc, "account.dat");
