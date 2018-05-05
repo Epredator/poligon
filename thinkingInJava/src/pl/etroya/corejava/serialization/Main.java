@@ -10,8 +10,8 @@ import java.util.logging.*;
 public class Main {
     static Logger logger = Logger.getLogger("pl.etroya.corejava.serialization");
 
-    public static void main(String[] args) {
-        Handler h = new ConsoleHandler();
+    public static void main(String[] args) throws IOException {
+        Handler h = new FileHandler("%h/myapp_%g.log", 1000, 4);
         Formatter f = new SimpleFormatter();
         h.setFormatter(f);
         logger.addHandler(h);
