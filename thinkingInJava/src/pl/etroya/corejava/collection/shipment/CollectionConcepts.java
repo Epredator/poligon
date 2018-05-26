@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class CollectionConcepts {
+
     public static void main(String[] args) {
         Product door = new Product("Wooden door", 35);
         Product floorPanel = new Product("Floor panel", 25);

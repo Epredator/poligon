@@ -1,6 +1,15 @@
 package pl.etroya.corejava.collection;
 
+import java.util.Comparator;
+
 public class Product {
+    public static final Comparator<? super Product> BY_WEIGHT = new Comparator<Product>() {
+        @Override
+        public int compare(Product p1, Product p2) {
+            return Integer.compare(p1.getWeight(), p2.getWeight());
+
+        }
+    };
     private final String name;
     private final int weight;
 
