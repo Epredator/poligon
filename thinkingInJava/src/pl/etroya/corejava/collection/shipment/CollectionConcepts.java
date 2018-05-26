@@ -1,8 +1,10 @@
-package pl.etroya.corejava.collection;
+package pl.etroya.corejava.collection.shipment;
 
 /*information about collections from
 https://app.pluralsight.com/player?course=java-fundamentals-collections&author=richard-warburton&name=java-fundamentals-collections-m2&clip=3&mode=live
 */
+
+import pl.etroya.corejava.collection.Product;
 
 import java.util.ArrayList;
 import java.util.Collection;
