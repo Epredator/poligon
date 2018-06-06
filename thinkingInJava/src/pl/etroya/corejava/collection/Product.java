@@ -18,6 +18,11 @@ public class Product {
         this.weight = weight;
     }
 
+    public Product(String s) {
+        this.name = s;
+        this.weight = 0;
+    }
+
     public String getName() {
         return name;
     }
