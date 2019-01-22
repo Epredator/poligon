@@ -1,7 +1,9 @@
 package com.etroya.controllers;
 
 import com.etroya.services.GreetingService;
+import com.etroya.services.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,14 +12,15 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class SetterInjectedController {
 
-    private GreetingService greetingService;
+    private GreetingServiceImpl greetingService;
 
     public String sayHello() {
         return greetingService.sayGreeting();
     }
 
     @Autowired
-    public void setGreetingService(GreetingService greetingService) {
+    @Qualifier("getterGreetingService")
+    public void setGreetingService(GreetingServiceImpl greetingService) {
 
         this.greetingService = greetingService;
     }
