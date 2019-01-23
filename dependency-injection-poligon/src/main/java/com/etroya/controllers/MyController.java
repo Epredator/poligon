@@ -1,5 +1,6 @@
 package com.etroya.controllers;
 
+import com.etroya.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,8 +9,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MyController {
 
+    private GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String hello(){
         System.out.println("Hello !");
-        return null;
+        return greetingService.sayGreeting();
     }
 }
