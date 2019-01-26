@@ -1,8 +1,11 @@
 package com.etroya.services;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Created by mada on 25.01.2019.
  */
+@Repository
 public class GreetingRepositoryImpl implements GreetingRepository {
     @Override
     public String getEnglishGreeting() {

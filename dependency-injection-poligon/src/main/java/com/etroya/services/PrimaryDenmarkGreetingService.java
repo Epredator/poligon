@@ -14,6 +14,10 @@ public class PrimaryDenmarkGreetingService implements GreetingService {
 
     private GreetingRepository greetingRepository;
 
+    public PrimaryDenmarkGreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
     @Override
     public String sayGreeting() {
 
