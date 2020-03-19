@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="basics" target="1.5" />
       <module name="rxJava" target="8" />
     </bytecodeTargetLevel>
   </component>
