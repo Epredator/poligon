@@ -30,6 +30,12 @@ public class Streams {
         List<String> sortedRevertNumbers = names.stream().sorted((i1, i2) -> -i1.compareTo(i2)).collect(Collectors.toList());
         long size = names.stream().filter(i -> i.length()>5).count();
         List<String> upperCase = names.stream().map(i -> i.toUpperCase()).collect(Collectors.toList());
+        String minVal = names.stream().min(String::compareTo).get();
+        String maxVal = names.stream().max(String::compareTo).get();
+        namesLessThen5.stream().forEach(s -> System.out.println(s));
+        sortedNumbers.stream().forEach(System.out::println);
+        System.out.println("printed minVal value is " + minVal);
+        System.out.println("printed maxVal value is " + maxVal);
         System.out.println(filteredL.toString());
         System.out.println(multiplicationL.toString());
         System.out.println(namesLessThen5.toString());
