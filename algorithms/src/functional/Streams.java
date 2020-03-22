@@ -27,6 +27,7 @@ public class Streams {
         List<Integer> multiplicationL = l.stream().map(i -> i*2).collect(Collectors.toList());
         List<String> namesLessThen5 = names.stream().filter(i -> i.length()>5).collect(Collectors.toList());
         List<String> sortedNumbers = names.stream().sorted().collect(Collectors.toList());
+        Integer[] array = names.stream().toArray(Integer[]:: new);
         List<String> sortedRevertNumbers = names.stream().sorted((i1, i2) -> -i1.compareTo(i2)).collect(Collectors.toList());
         long size = names.stream().filter(i -> i.length()>5).count();
         List<String> upperCase = names.stream().map(i -> i.toUpperCase()).collect(Collectors.toList());
@@ -44,4 +45,7 @@ public class Streams {
         System.out.println(sortedRevertNumbers.toString());
         System.out.println(size);
     }
+
+
+
 }
