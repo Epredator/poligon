@@ -1,6 +1,6 @@
 package codilityTest;
 
-import codility.NumberSearcher;
+import interviewquestions.codility.NumberSearcher;
 import org.junit.Assert;
 import org.junit.Test;
 

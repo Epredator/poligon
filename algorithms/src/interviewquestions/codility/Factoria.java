@@ -1,4 +1,4 @@
-package codility;
+package interviewquestions.codility;
 
 /**
  * User: trojnaradam@gmail.com

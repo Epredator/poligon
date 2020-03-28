@@ -1,6 +1,6 @@
 package codilityTest;
 
-import codility.Factoria;
+import interviewquestions.codility.Factoria;
 import junit.framework.Assert;
 import org.junit.Test;
 
