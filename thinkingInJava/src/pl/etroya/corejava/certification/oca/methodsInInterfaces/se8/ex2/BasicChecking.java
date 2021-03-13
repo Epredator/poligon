@@ -1,4 +1,4 @@
-package pl.etroya.corejava.certification.oca.methodsInInterfaces.ex2;
+package pl.etroya.corejava.certification.oca.methodsInInterfaces.se8.ex2;
 
 public class BasicChecking implements Accessible {
     @Override

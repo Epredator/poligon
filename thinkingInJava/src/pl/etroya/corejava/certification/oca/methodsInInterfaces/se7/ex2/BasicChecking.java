@@ -1,6 +1,6 @@
-package pl.etroya.corejava.certification.oca.methodsInInterfaces.ex2;
+package pl.etroya.corejava.certification.oca.methodsInInterfaces.se7.ex2;
 
-public class RestictedChecking implements Accessible {
+public class BasicChecking implements Accessible {
     @Override
     public double verifyDeposit(double amount, int pin) {
         //        verfy pin
@@ -13,7 +13,6 @@ public class RestictedChecking implements Accessible {
         //        verfy pin
         //        verfy amount is greater than 0
         //        veryfiy account balance will not go negative
-        //        Verify that the withdraw is under the deposit limit
         return 0;
     }
 }

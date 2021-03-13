@@ -1,4 +1,4 @@
-package pl.etroya.corejava.certification.oca.methodsInInterfaces.ex2;
+package pl.etroya.corejava.certification.oca.methodsInInterfaces.se7.ex2;
 
 //Example: Implementing abstract methods
 // src: https://learn.oracle.com/ols/course/prepare-for-java-se-certification/82508/79482/124475
