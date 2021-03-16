@@ -10,5 +10,5 @@ public class ProductFixtures {
     public static Product window = new Product("F", 10);
 
 
-    public static Supplier bobs = new Supplier("Bob's Household Supplies");
+//    public static Supplier bobs = new Supplier("Bob's Household Supplies");
 }
