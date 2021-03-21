@@ -25,7 +25,7 @@ public class ImmutableSetTest {
         set.add("Canada");
         set.add("USA");
 
-        Set<String> immutable = ImmutableSet.copyOf(set);
+//        Set<String> immutable = ImmutableSet.copyOf(set);
 
         Set<String> unmodifiableSet = Collections.unmodifiableSet(set);
         unmodifiableSet.add("Costa Rica");
