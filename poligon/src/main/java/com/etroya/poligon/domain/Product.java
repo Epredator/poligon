@@ -9,12 +9,19 @@ public class Product {
     private final String name;
     private String caution;
     private Condition condition;
+    private Rating rating;
     private BigDecimal price;
 
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 
     {
         id = ++maxId;
+    }
+
+    public Product(String name, Rating rating, BigDecimal price) {
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
     }
 
     public Product(String name, Condition hot) {
@@ -69,5 +76,9 @@ public class Product {
 
     private void addCaution(String s) {
         System.out.println(s);
+    }
+
+    public Rating getRating(){
+        return rating;
     }
 }
