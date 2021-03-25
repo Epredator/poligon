@@ -3,6 +3,8 @@ package com.etroya.poligon.domain;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static com.etroya.poligon.domain.Rating.NOT_RATED;
+
 public class Product {
     private static int maxId = 0;
     private final int id;
@@ -18,11 +20,7 @@ public class Product {
         id = ++maxId;
     }
 
-    public Product(String name, Rating rating, BigDecimal price) {
-        this.name = name;
-        this.rating = rating;
-        this.price = price;
-    }
+
 
     public Product(String name, Condition hot) {
         this.name = name;
@@ -30,14 +28,17 @@ public class Product {
     }
 
     public Product(String name, BigDecimal price) {
-        this.name = name;
-        this.price = price;
+        this(name, NOT_RATED, price);
     }
 
-    public Product(String name, Condition condition, BigDecimal price){
+    public Product(String name, Condition condition, BigDecimal price) {
         this.name = name;
         this.condition = condition;
         this.price = price;
+    }
+
+    public Product() {
+        this("no name", BigDecimal.ZERO);
     }
 
     public Product(String name) {
@@ -60,8 +61,8 @@ public class Product {
         return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public Product serve(){
-        switch (condition){
+    public Product serve(Condition condition) {
+        switch (condition) {
             case HOT:
                 this.addCaution("Warning hot!");
                 break;
@@ -78,7 +79,18 @@ public class Product {
         System.out.println(s);
     }
 
-    public Rating getRating(){
+    public Rating getRating() {
         return rating;
+    }
+
+    public Product applyRating(Rating newRating) {
+        return new Product(name, newRating, price);
+
+    }
+
+    public Product(String name, Rating rating, BigDecimal price) {
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
     }
 }
