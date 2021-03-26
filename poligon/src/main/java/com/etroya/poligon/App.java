@@ -1,8 +1,6 @@
 package com.etroya.poligon;
 
-import com.etroya.poligon.domain.Condition;
-import com.etroya.poligon.domain.Product;
-import com.etroya.poligon.domain.Rating;
+import com.etroya.poligon.domain.*;
 
 import java.math.BigDecimal;
 
@@ -16,11 +14,14 @@ public class App {
         Product p3 = new Product("Cake", FIVE_STAR, BigDecimal.valueOf(3.99));
         Product p4 = new Product();
         Product p5 = p3.applyRating(THREE_STAR);
+        Drink drink = new Drink();
 
         Product p = new Product("Books");
         Person jonny = new Person("jonny");
         Product tea = new Product("Tea", HOT);
         jonny.consume(tea.serve(HOT));
+        drink.serve();
+
         System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount(p1.getPrice())  + " " + p1.getRating().getStars());
         System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount(p2.getPrice()) + " " + p2.getRating().getStars());
         System.out.println(p3.getId() + " " + p3.getName() + " " + p3.getPrice() + " " + p3.getDiscount(p3.getPrice()) + " " + p3.getRating().getStars());
