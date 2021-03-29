@@ -29,6 +29,9 @@ public class App {
         jonny.consume(tea.serve(HOT));
 //        drink.serve();
 
+        GenericSample<Product> sample = new GenericSample<>();
+        sample.setValue(new Product("Cola", BigDecimal.valueOf(2.11)));
+
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount(p1.getPrice())  + " " + p1.getRating().getStars());
 //        System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount(p2.getPrice()) + " " + p2.getRating().getStars());
 //        System.out.println(p3.getId() + " " + p3.getName() + " " + p3.getPrice() + " " + p3.getDiscount(p3.getPrice()) + " " + p3.getRating().getStars());
