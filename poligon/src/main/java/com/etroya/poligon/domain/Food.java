@@ -21,8 +21,13 @@ public class Food extends ProductAbstract{
 
     @Override
     public Product applyRating(Rating newRating) {
-        return new Food(getId(), getPrice(), newRating, bestBefore);
+        return null;
     }
+
+//    @Override
+//    public Product applyRating(Rating newRating) {
+//        return new Food(getId(), getPrice(), newRating, bestBefore);
+//    }
 
     public Food(int id, LocalDate bestBefore, String name, BigDecimal price, Rating rating) {
         super(id, name, price, rating);

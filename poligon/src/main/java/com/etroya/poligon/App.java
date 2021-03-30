@@ -5,6 +5,8 @@ import com.etroya.poligon.domain.*;
 import java.math.BigDecimal;
 //import java.time.LocalDate;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import static com.etroya.poligon.domain.Condition.HOT;
@@ -31,6 +33,14 @@ public class App {
 
         GenericSample<Product> sample = new GenericSample<>();
         sample.setValue(new Product("Cola", BigDecimal.valueOf(2.11)));
+
+        Product[] products = {
+                new Product("Tea"),
+                new Product("Coffee"),
+                new Product("Cake"),
+        };
+
+        Arrays.sort(products, new ProductNameSorter());
 
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount(p1.getPrice())  + " " + p1.getRating().getStars());
 //        System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount(p2.getPrice()) + " " + p2.getRating().getStars());

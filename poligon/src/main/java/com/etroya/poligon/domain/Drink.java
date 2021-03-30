@@ -24,8 +24,13 @@ public class Drink extends ProductAbstract{
 
     @Override
     public Product applyRating(Rating newRating) {
-        return new Drink(getId(), getPrice(), newRating, bestBefore);
+        return null;
     }
+
+//    @Override
+//    public Product applyRating(Rating newRating) {
+//        return new Drink(getId(), getPrice(), newRating, bestBefore);
+//    }
 
 
     @Override
