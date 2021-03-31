@@ -2,6 +2,7 @@ package com.etroya.poligon.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 
 import static com.etroya.poligon.domain.Rating.NOT_RATED;
 
@@ -19,8 +20,6 @@ public class Product {
     {
         id = ++maxId;
     }
-
-
 
     public Product(String name, Condition hot) {
         this.name = name;
@@ -57,10 +56,6 @@ public class Product {
         return price;
     }
 
-    public BigDecimal getDiscount(final BigDecimal price) {
-        return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
-    }
-
     public Product serve(Condition condition) {
         switch (condition) {
             case HOT:
@@ -79,18 +74,33 @@ public class Product {
         System.out.println(s);
     }
 
+    public Product(String name, Rating rating, BigDecimal price) {
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
+    }
+
+    public BigDecimal getDiscount() {
+        return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
+    }
+
     public Rating getRating() {
         return rating;
     }
 
     public Product applyRating(Rating newRating) {
         return new Product(name, newRating, price);
-
     }
 
-    public Product(String name, Rating rating, BigDecimal price) {
-        this.name = name;
-        this.rating = rating;
-        this.price = price;
+    public LocalDate getBestBefore(){
+        return LocalDate.now();
     }
+
+    public String toString() {
+        return id+" , " +name+ " , " +price+ " , " +getDiscount()+ " , "+rating.getStars()+ getBestBefore();
+    }
+
+
+
+
 }
