@@ -1,4 +1,7 @@
-package com.etroya.poligon.domain;
+package com.etroya.poligon.domain.data;
+
+import com.etroya.poligon.domain.Condition;
+import com.etroya.poligon.domain.Rating;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,5 +1,7 @@
 package com.etroya.poligon.domain;
 
+import com.etroya.poligon.domain.data.Product;
+
 import java.util.Comparator;
 
 public class ProductNameSorter implements Comparator<Product> {

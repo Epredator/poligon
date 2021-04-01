@@ -1,16 +1,16 @@
 package com.etroya.poligon;
 
 import com.etroya.poligon.domain.*;
+import com.etroya.poligon.domain.data.Drink;
+import com.etroya.poligon.domain.data.Food;
+import com.etroya.poligon.domain.data.Product;
 
 import java.math.BigDecimal;
 //import java.time.LocalDate;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
 
 import static com.etroya.poligon.domain.Condition.HOT;
-import static com.etroya.poligon.domain.ProductType.*;
 import static com.etroya.poligon.domain.Rating.*;
 
 public class App {

@@ -1,8 +1,9 @@
 package com.etroya.poligon.domain;
 
+import com.etroya.poligon.domain.data.Product;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Properties;
 
 public abstract class ProductAbstract {
 

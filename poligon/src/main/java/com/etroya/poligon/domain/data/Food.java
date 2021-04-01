@@ -1,9 +1,12 @@
-package com.etroya.poligon.domain;
+package com.etroya.poligon.domain.data;
+
+import com.etroya.poligon.domain.ProductAbstract;
+import com.etroya.poligon.domain.Rating;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Food extends ProductAbstract{
+public class Food extends ProductAbstract {
 
     private LocalDate bestBefore;
 
