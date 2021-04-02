@@ -3,6 +3,7 @@ package com.etroya.poligon.domain;
 import com.etroya.poligon.domain.data.Product;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 
 public abstract class ProductAbstract {
@@ -13,6 +14,7 @@ public abstract class ProductAbstract {
     private BigDecimal price;
     private Rating rating;
     private LocalDate bestBefore;
+    private NumberFormat moneyFormat;
 
     public ProductAbstract() {
         this(0, "no_name", BigDecimal.ZERO);
@@ -72,5 +74,5 @@ public abstract class ProductAbstract {
         return LocalDate.now();
     }
 
-    public abstract Product applyRating(Rating newRating);
+    public abstract ProductAbstract applyRating(Rating newRating);
 }

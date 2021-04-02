@@ -30,7 +30,7 @@ public class Drink extends ProductAbstract {
     }
 
     @Override
-    public Product applyRating(Rating newRating) {
+    public ProductAbstract applyRating(Rating newRating) {
         return null;
     }
 

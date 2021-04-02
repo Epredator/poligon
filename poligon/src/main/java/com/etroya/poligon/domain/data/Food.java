@@ -23,7 +23,7 @@ public class Food extends ProductAbstract {
     }
 
     @Override
-    public Product applyRating(Rating newRating) {
+    public ProductAbstract applyRating(Rating newRating) {
         return null;
     }
 
