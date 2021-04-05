@@ -9,13 +9,20 @@ import java.math.BigDecimal;
 //import java.time.LocalDate;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Locale;
 
 import static com.etroya.poligon.domain.Condition.HOT;
 import static com.etroya.poligon.domain.Rating.*;
 
 public class App {
     public static void main(String[] args) {
+        ProductFactory pf = new ProductFactory(Locale.US);
+        ProductAbstract p1 = pf.createProduct(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
+        pf.printProductReport();
+        p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
+        pf.printProductReport();
         Drink p1 = new Drink(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
+        pf.printProductReport();
 
 //        ProductAbstract p2 = new Drink(101, LocalDate.now().plusDays(2), "Coffe", BigDecimal.valueOf(0.11), FOUR_STAR);
         ProductAbstract p3 = new Food(102, LocalDate.now().plusDays(2), "Cake", BigDecimal.valueOf(3.99), FIVE_STAR);

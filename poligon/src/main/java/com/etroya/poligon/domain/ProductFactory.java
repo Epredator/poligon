@@ -9,13 +9,14 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ProductFactory {
 
     private ProductAbstract product;
-    private Review review;
+    private Review[] reviews = new Review[5];
     private Locale locale;
     private ResourceBundle resources;
     private DateTimeFormatter dateFormat;
@@ -40,7 +41,10 @@ public class ProductFactory {
     }
 
     public ProductAbstract reviewProduct(ProductAbstract product, Rating rating, String comments) {
-        review = new Review(rating, comments);
+//        review = new Review(rating, comments);
+        if(reviews[reviews - 1] != null){
+            reviews = Arrays.copyOf(reviews, reviews.length + 5);
+        }
         this.product = product.applyRating(rating);
         return this.product;
     }
