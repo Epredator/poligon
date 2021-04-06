@@ -42,10 +42,21 @@ public class ProductFactory {
 
     public ProductAbstract reviewProduct(ProductAbstract product, Rating rating, String comments) {
 //        review = new Review(rating, comments);
-        if(reviews[reviews - 1] != null){
+        if (reviews[reviews.length - 1] != null) {
             reviews = Arrays.copyOf(reviews, reviews.length + 5);
         }
-        this.product = product.applyRating(rating);
+        int sum = 0, i = 0;
+        Boolean reviewed = false;
+
+        while (i < reviews.length && !reviewed) {
+            if (reviews[i] == null) {
+                reviews[i] = new Review(rating, comments);
+                reviewed = true;
+            }
+            sum += reviews[i].getRating().ordinal();
+            i++;
+        }
+        this.product = product.applyRating(Rateable.convert(Math.round((float) sum / i)));
         return this.product;
     }
 
@@ -58,15 +69,18 @@ public class ProductFactory {
                 dateFormat.format(product.getBestBefore())
         ));
         txt.append('\n');
-        if (review != null) {
+        for (Review review : reviews) {
+            if (review == null) {
+                break;
+            }
             txt.append(MessageFormat.format(resources.getString("review"),
                     review.getRating().getStars(),
-                    review.getComments()
-            ));
-        } else {
-            txt.append(resources.getString("no.reviews"));
+                    review.getComments()));
         }
-        txt.append('\n');
+        if(reviews[0] == null){
+            txt.append(resources.getString("no.reviews"));
+            txt.append('\n');
+        }
         System.out.println(txt);
     }
 

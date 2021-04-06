@@ -21,7 +21,7 @@ public class App {
         pf.printProductReport();
         p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
         pf.printProductReport();
-        Drink p1 = new Drink(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
+//        Drink p1 = new Drink(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
         pf.printProductReport();
 
 //        ProductAbstract p2 = new Drink(101, LocalDate.now().plusDays(2), "Coffe", BigDecimal.valueOf(0.11), FOUR_STAR);
