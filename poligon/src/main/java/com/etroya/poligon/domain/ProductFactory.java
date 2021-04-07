@@ -9,18 +9,18 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ProductFactory {
 
-    private ProductAbstract product;
-    private Review[] reviews = new Review[5];
+    //    private ProductAbstract product;
+//    private Review[] reviews = new Review[5];
+    private Map<ProductAbstract, List<Review>> products = new HashMap<>();
     private Locale locale;
     private ResourceBundle resources;
     private DateTimeFormatter dateFormat;
     private NumberFormat moneyFormat;
+
 
     public ProductFactory(Locale locale) {
         this.locale = locale;
@@ -77,7 +77,7 @@ public class ProductFactory {
                     review.getRating().getStars(),
                     review.getComments()));
         }
-        if(reviews[0] == null){
+        if (reviews[0] == null) {
             txt.append(resources.getString("no.reviews"));
             txt.append('\n');
         }
