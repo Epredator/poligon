@@ -5,6 +5,7 @@ import com.etroya.poligon.domain.data.Product;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class ProductAbstract {
 
@@ -75,4 +76,16 @@ public abstract class ProductAbstract {
     }
 
     public abstract ProductAbstract applyRating(Rating newRating);
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if (obj instanceof ProductAbstract) {
+            final ProductAbstract other = (ProductAbstract) obj;
+            return this.id == other.id;
+        }
+        return false;
+    }
 }

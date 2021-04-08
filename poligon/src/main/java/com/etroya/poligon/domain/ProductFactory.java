@@ -2,7 +2,6 @@ package com.etroya.poligon.domain;
 
 import com.etroya.poligon.domain.data.Drink;
 import com.etroya.poligon.domain.data.Food;
-import com.etroya.poligon.domain.data.Product;
 
 import java.math.BigDecimal;
 import java.text.MessageFormat;
@@ -43,12 +42,16 @@ public class ProductFactory {
         return product;
     }
 
+    public ProductAbstract reviewProduct(int id, Rating rating, String comments) {
+        reviewProduct(findProduct(id), rating, comments);
+    }
+
     public ProductAbstract reviewProduct(ProductAbstract product, Rating rating, String comments) {
         List<Review> reviews = products.get(product);
         products.remove(product, reviews);
         reviews.add(new Review(rating, comments));
         int sum = 0;
-        for(Review review:reviews){
+        for (Review review : reviews) {
             sum += review.getRating().ordinal();
         }
 
@@ -57,8 +60,12 @@ public class ProductFactory {
         return product;
     }
 
+    public void printProductReport(int id) {
+        printProductReport(findProduct(id));
+    }
+
     public void printProductReport(ProductAbstract product) {
-        List<Review> reviews =  products.get(product);
+        List<Review> reviews = products.get(product);
         StringBuilder txt = new StringBuilder();
         txt.append(MessageFormat.format(resources.getString("product"),
                 product.getName(),
@@ -67,6 +74,7 @@ public class ProductFactory {
                 dateFormat.format(product.getBestBefore())
         ));
         txt.append('\n');
+        Collections.sort(reviews);
         for (Review review : reviews) {
             if (review == null) {
                 break;
@@ -80,6 +88,19 @@ public class ProductFactory {
             txt.append('\n');
         }
         System.out.println(txt);
+    }
+
+    public ProductAbstract findProduct(int id) {
+        ProductAbstract result = null;
+        for (ProductAbstract product : products.keySet()) {
+            if (product.getId() == id) {
+                result = product;
+                break;
+            }
+        }
+        return result;
+
+
     }
 
 
