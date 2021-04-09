@@ -13,21 +13,22 @@ import java.util.*;
 
 public class ProductFactory {
 
+
+
     //    private ProductAbstract product;
 //    private Review[] reviews = new Review[5];
     private Map<ProductAbstract, List<Review>> products = new HashMap<>();
-    private Locale locale;
-    private ResourceBundle resources;
-    private DateTimeFormatter dateFormat;
-    private NumberFormat moneyFormat;
+    private static Map<String, ResourceFormatter> formatters
+            =Map.of("en-GB", new ResourceFormatter(Locale.UK),
+            ("en-US", new ResourceFormatter(Locale.US),
+            ("pl-PL", new ResourceFormatter(Locale.)
+
+
+    )
 
 
     public ProductFactory(Locale locale) {
-        this.locale = locale;
-        resources = ResourceBundle.getBundle("com.etroya.poligon", locale);
-        dateFormat = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)
-                .localizedBy(locale);
-        moneyFormat = NumberFormat.getCurrencyInstance(locale);
+
     }
 
     public ProductAbstract createProduct(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
@@ -67,21 +68,14 @@ public class ProductFactory {
     public void printProductReport(ProductAbstract product) {
         List<Review> reviews = products.get(product);
         StringBuilder txt = new StringBuilder();
-        txt.append(MessageFormat.format(resources.getString("product"),
-                product.getName(),
-                moneyFormat.format(product.getPrice()),
-                product.getRating().getStars(),
-                dateFormat.format(product.getBestBefore())
-        ));
+        txt.append();
         txt.append('\n');
         Collections.sort(reviews);
         for (Review review : reviews) {
             if (review == null) {
                 break;
             }
-            txt.append(MessageFormat.format(resources.getString("review"),
-                    review.getRating().getStars(),
-                    review.getComments()));
+
         }
         if (reviews.isEmpty()) {
             txt.append(resources.getString("no.reviews"));
@@ -102,6 +96,39 @@ public class ProductFactory {
 
 
     }
+
+    private static class ResourceFormatter {
+        private Locale locale;
+        private ResourceBundle resources;
+        private DateTimeFormatter dateFormat;
+        private NumberFormat moneyFormat;
+
+        private ResourceFormatter(Locale locale) {
+            this.locale = locale;
+            resources = ResourceBundle.getBundle("com.etroya.poligon", locale);
+            dateFormat = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)
+                    .localizedBy(locale);
+            moneyFormat = NumberFormat.getCurrencyInstance(locale);
+        }
+
+        private String formatProduct(ProductAbstract product) {
+            return MessageFormat.format(resources.getString("product"),
+                    product.getName(),
+                    moneyFormat.format(product.getPrice()),
+                    product.getRating().getStars(),
+                    dateFormat.format(product.getBestBefore());
+        }
+
+        private String formatReview(Review review) {
+            return MessageFormat.format(resources.getString("review"),
+                    review.getRating().getStars(),
+                    review.getComments());
+        }
+
+        private String getText(){
+    }
+
+}
 
 
 //    public static Product createProduct(ProductType productType) {
