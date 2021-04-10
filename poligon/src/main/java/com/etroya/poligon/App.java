@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 //import java.time.LocalDate;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Locale;
 
 import static com.etroya.poligon.domain.Condition.HOT;
@@ -18,9 +19,19 @@ public class App {
     public static void main(String[] args) {
         ProductFactory pf = new ProductFactory(Locale.US);
         ProductAbstract p1 = pf.createProduct(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
+        ProductAbstract p2 = pf.createProduct(102,"Chocolate", BigDecimal.valueOf(2.99), FIVE_STAR);
         pf.printProductReport(p1);
         p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
+        p2 = pf.reviewProduct(p1, FOUR_STAR, "Nice chocolate. Great to have it");
         pf.printProductReport(p1);
+
+        Comparator<ProductAbstract> ratingSorter = (pa1, pa2) -> pa2.getRating().ordinal()-pa1.getRating().ordinal();
+        Comparator<ProductAbstract> priceSorter = (pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice());
+        pf.printProductReport(ratingSorter);
+        pf.printProductReport(priceSorter);
+        pf.printProductReport(ratingSorter.thenComparing(priceSorter));
+        pf.printProductReport((pa1, pa2) -> pa2.getRating().ordinal() - pa1.getRating().ordinal() );
+        pf.printProductReport((pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice()));
 //        Drink p1 = new Drink(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
 
 //        ProductAbstract p2 = new Drink(101, LocalDate.now().plusDays(2), "Coffe", BigDecimal.valueOf(0.11), FOUR_STAR);
@@ -54,5 +65,6 @@ public class App {
 //        System.out.println(p4.getId() + " " + p4.getName() + " " + p4.getPrice() + " " + p4.getDiscount(p3.getPrice()) + " " + p4.getRating().getStars());
 //        System.out.println(p5.getId() + " " + p5.getName() + " " + p5.getPrice() + " " + p5.getDiscount(p3.getPrice()) + " " + p5.getRating().getStars());
         System.out.println(p3);
+
     }
 }

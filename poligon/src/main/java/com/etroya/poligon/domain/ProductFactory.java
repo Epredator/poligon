@@ -2,6 +2,7 @@ package com.etroya.poligon.domain;
 
 import com.etroya.poligon.domain.data.Drink;
 import com.etroya.poligon.domain.data.Food;
+import com.etroya.poligon.domain.data.Product;
 
 import java.math.BigDecimal;
 import java.text.MessageFormat;
@@ -14,21 +15,30 @@ import java.util.*;
 public class ProductFactory {
 
 
-
     //    private ProductAbstract product;
 //    private Review[] reviews = new Review[5];
     private Map<ProductAbstract, List<Review>> products = new HashMap<>();
     private static Map<String, ResourceFormatter> formatters
-            =Map.of("en-GB", new ResourceFormatter(Locale.UK),
-            ("en-US", new ResourceFormatter(Locale.US),
-            ("pl-PL", new ResourceFormatter(Locale.)
-
-
-    )
+            = Map.of("en-GB", new ResourceFormatter(Locale.UK),
+            "en-US", new ResourceFormatter(Locale.US),
+            "zh-CN", new ResourceFormatter(Locale.CHINA));
+    private ResourceFormatter formatter;
 
 
     public ProductFactory(Locale locale) {
+        this(locale.toLanguageTag());
+    }
 
+    public ProductFactory(String languageTag) {
+        changeLocale(languageTag);
+    }
+
+    public void changeLocale(String languageTag) {
+        formatter = formatters.getOrDefault(languageTag, formatters.get("en-GB"));
+    }
+
+    public static Set<String> getSupportedLocales() {
+        return formatters.keySet();
     }
 
     public ProductAbstract createProduct(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
@@ -41,10 +51,6 @@ public class ProductFactory {
         ProductAbstract product = new Drink(id, name, price, rating);
         products.putIfAbsent(product, new ArrayList<>());
         return product;
-    }
-
-    public ProductAbstract reviewProduct(int id, Rating rating, String comments) {
-        reviewProduct(findProduct(id), rating, comments);
     }
 
     public ProductAbstract reviewProduct(ProductAbstract product, Rating rating, String comments) {
@@ -65,20 +71,30 @@ public class ProductFactory {
         printProductReport(findProduct(id));
     }
 
+    public void printProductReport(Comparator<ProductAbstract> sorter){
+        List<ProductAbstract> productList = new ArrayList<>(products.keySet());
+        productList.sort(sorter);
+        StringBuilder txt = new StringBuilder();
+        for(ProductAbstract product : productList){
+            txt.append(formatter.formatProduct(product));
+            txt.append('\n');
+        }
+        System.out.println(txt);
+    }
+
     public void printProductReport(ProductAbstract product) {
         List<Review> reviews = products.get(product);
         StringBuilder txt = new StringBuilder();
-        txt.append();
+        txt.append(formatter.formatProduct(product));
         txt.append('\n');
         Collections.sort(reviews);
         for (Review review : reviews) {
-            if (review == null) {
-                break;
-            }
+            txt.append(formatter.formatProduct(product));
+            txt.append("\n");
 
         }
         if (reviews.isEmpty()) {
-            txt.append(resources.getString("no.reviews"));
+            txt.append(formatter.getText("no.reviews"));
             txt.append('\n');
         }
         System.out.println(txt);
@@ -116,7 +132,7 @@ public class ProductFactory {
                     product.getName(),
                     moneyFormat.format(product.getPrice()),
                     product.getRating().getStars(),
-                    dateFormat.format(product.getBestBefore());
+                    dateFormat.format(product.getBestBefore()));
         }
 
         private String formatReview(Review review) {
@@ -125,10 +141,11 @@ public class ProductFactory {
                     review.getComments());
         }
 
-        private String getText(){
-    }
+        private String getText(String key) {
+            return resources.getString(key);
+        }
 
-}
+    }
 
 
 //    public static Product createProduct(ProductType productType) {
