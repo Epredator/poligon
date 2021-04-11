@@ -2,7 +2,6 @@ package com.etroya.poligon.domain;
 
 import com.etroya.poligon.domain.data.Drink;
 import com.etroya.poligon.domain.data.Food;
-import com.etroya.poligon.domain.data.Product;
 
 import java.math.BigDecimal;
 import java.text.MessageFormat;
@@ -14,9 +13,6 @@ import java.util.*;
 
 public class ProductFactory {
 
-
-    //    private ProductAbstract product;
-//    private Review[] reviews = new Review[5];
     private Map<ProductAbstract, List<Review>> products = new HashMap<>();
     private static Map<String, ResourceFormatter> formatters
             = Map.of("en-GB", new ResourceFormatter(Locale.UK),
@@ -71,11 +67,11 @@ public class ProductFactory {
         printProductReport(findProduct(id));
     }
 
-    public void printProductReport(Comparator<ProductAbstract> sorter){
+    public void printProductReport(Comparator<ProductAbstract> sorter) {
         List<ProductAbstract> productList = new ArrayList<>(products.keySet());
         productList.sort(sorter);
         StringBuilder txt = new StringBuilder();
-        for(ProductAbstract product : productList){
+        for (ProductAbstract product : productList) {
             txt.append(formatter.formatProduct(product));
             txt.append('\n');
         }
@@ -101,16 +97,11 @@ public class ProductFactory {
     }
 
     public ProductAbstract findProduct(int id) {
-        ProductAbstract result = null;
-        for (ProductAbstract product : products.keySet()) {
-            if (product.getId() == id) {
-                result = product;
-                break;
-            }
-        }
-        return result;
-
-
+        return products.keySet()
+                .stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElseGet(() -> null);
     }
 
     private static class ResourceFormatter {
