@@ -27,11 +27,11 @@ public class App {
 
         Comparator<ProductAbstract> ratingSorter = (pa1, pa2) -> pa2.getRating().ordinal()-pa1.getRating().ordinal();
         Comparator<ProductAbstract> priceSorter = (pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice());
-        pf.printProductReport(ratingSorter);
-        pf.printProductReport(priceSorter);
-        pf.printProductReport(ratingSorter.thenComparing(priceSorter));
-        pf.printProductReport((pa1, pa2) -> pa2.getRating().ordinal() - pa1.getRating().ordinal() );
-        pf.printProductReport((pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice()));
+//        pf.printProductReport(ratingSorter);
+//        pf.printProductReport(priceSorter);
+//        pf.printProductReport(ratingSorter.thenComparing(priceSorter));
+//        pf.printProductReport((pa1, pa2) -> pa2.getRating().ordinal() - pa1.getRating().ordinal() );
+//        pf.printProductReport((pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice()));
 //        Drink p1 = new Drink(102,"Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
 
 //        ProductAbstract p2 = new Drink(101, LocalDate.now().plusDays(2), "Coffe", BigDecimal.valueOf(0.11), FOUR_STAR);
