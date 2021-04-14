@@ -24,8 +24,6 @@ public class App {
         ProductAbstract p1 = pf.createProduct(102, "Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
         ProductAbstract p2 = pf.createProduct(102, "Chocolate", BigDecimal.valueOf(2.99), FIVE_STAR);
         pf.printProductReport(42);
-        pf.parseReview("101, 4, Nice hot cup of tea");
-        pf.parseProduct("D, 101, Tea, 1.99, 0, 2019-09-19");
 
         p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
         p2 = pf.reviewProduct(p1, FOUR_STAR, "Nice chocolate. Great to have it");

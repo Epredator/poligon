@@ -1,15 +1,17 @@
 package com.etroya.poligon.domain.data;
 
 import com.etroya.poligon.domain.Condition;
+import com.etroya.poligon.domain.Rateable;
 import com.etroya.poligon.domain.Rating;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
 import static com.etroya.poligon.domain.Rating.NOT_RATED;
 
-public class Product {
+public class Product implements Rateable<Product>, Serializable {
     private static int maxId = 0;
     private final int id;
     private final String name;
