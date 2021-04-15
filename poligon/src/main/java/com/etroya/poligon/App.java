@@ -18,16 +18,17 @@ import static com.etroya.poligon.domain.Rating.FIVE_STAR;
 import static com.etroya.poligon.domain.Rating.FOUR_STAR;
 
 public class App {
+
     public static void main(String[] args) {
 
-        ProductFactory pf = new ProductFactory(Locale.ENGLISH);
+        ProductFactory pf = ProductFactory.getInstance();
         ProductAbstract p1 = pf.createProduct(102, "Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
-        ProductAbstract p2 = pf.createProduct(102, "Chocolate", BigDecimal.valueOf(2.99), FIVE_STAR);
-        pf.printProductReport(42);
+        ProductAbstract p2 = pf.createProduct(103, "Chocolate", BigDecimal.valueOf(2.99), FIVE_STAR);
+        pf.printProductReport(42, "en-GB");
 
         p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
         p2 = pf.reviewProduct(p1, FOUR_STAR, "Nice chocolate. Great to have it");
-        pf.printProductReport(p1);
+        pf.printProductReport(p1, "en-GB");
 
         Comparator<ProductAbstract> ratingSorter = (pa1, pa2) -> pa2.getRating().ordinal() - pa1.getRating().ordinal();
         Comparator<ProductAbstract> priceSorter = (pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice());
@@ -42,6 +43,8 @@ public class App {
         ProductAbstract p3 = new Food(102, LocalDate.now().plusDays(2), "Cake", BigDecimal.valueOf(3.99), FIVE_STAR);
         p3.getBestBefore();
         Product p4 = new Product();
+        pf.dumpData();
+        pf.restoreData();
 //        Product p5 = p3.applyRating(THREE_STAR);
 //        Drink drink = new Drink();
 //        Product product = ProductFactory.createProduct(FOOD);
