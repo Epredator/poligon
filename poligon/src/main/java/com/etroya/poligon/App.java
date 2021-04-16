@@ -11,7 +11,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Locale;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.etroya.poligon.domain.Condition.HOT;
 import static com.etroya.poligon.domain.Rating.FIVE_STAR;
@@ -20,15 +26,50 @@ import static com.etroya.poligon.domain.Rating.FOUR_STAR;
 public class App {
 
     public static void main(String[] args) {
-
         ProductFactory pf = ProductFactory.getInstance();
-        ProductAbstract p1 = pf.createProduct(102, "Tea", BigDecimal.valueOf(1.99), FOUR_STAR);
-        ProductAbstract p2 = pf.createProduct(103, "Chocolate", BigDecimal.valueOf(2.99), FIVE_STAR);
-        pf.printProductReport(42, "en-GB");
+        AtomicInteger clientCount = new AtomicInteger();
 
-        p1 = pf.reviewProduct(p1, FIVE_STAR, "Nice tea. Good to have it");
-        p2 = pf.reviewProduct(p1, FOUR_STAR, "Nice chocolate. Great to have it");
-        pf.printProductReport(p1, "en-GB");
+        Callable<String> client = () -> {
+            String clientId = "Client " + clientCount.incrementAndGet();
+            String threadName = Thread.currentThread().getName();
+            int productId = ThreadLocalRandom.current().nextInt(63) + 101;
+            String languageTag = ProductFactory.getSupportedLocales()
+                    .stream()
+                    .skip(ThreadLocalRandom.current().nextInt(4))
+                    .findFirst().get();
+
+            StringBuilder log = new StringBuilder();
+            log.append(clientId + " " + threadName + "\n-\tstart of log\t-\n");
+            log.append(pf.getDiscount(languageTag)
+                    .entrySet()
+                    .stream()
+                    .map(entry -> entry.getKey() + "\t" + entry.getValue())
+                    .collect(Collectors.joining("\n")));
+            ProductAbstract product = pf.reviewProduct(productId, FOUR_STAR, "Yet another review");
+            log.append((product != null) ? "\nProduct " + productId + " reviewed\n" : "\nProduct " + productId + " not reviewed");
+            log.append(clientId + "  generated report for  " + productId + " product");
+            log.append("\n-\tend of log\t-\n");
+            return log.toString();
+        };
+
+        List<Callable<String>> clients = Stream.generate(() -> client).limit(5).collect(Collectors.toList());
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        try {
+            List<Future<String>> results = executorService.invokeAll(clients);
+            executorService.shutdown();
+            results.stream().forEach(result ->
+            {
+                try {
+                    System.out.println(result.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    Logger.getLogger(App.class.getName()).log(Level.SEVERE, "Error retriving client log", e);
+                }
+            });
+        } catch (InterruptedException e) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, "Error invoking client", e);
+        }
 
         Comparator<ProductAbstract> ratingSorter = (pa1, pa2) -> pa2.getRating().ordinal() - pa1.getRating().ordinal();
         Comparator<ProductAbstract> priceSorter = (pa1, pa2) -> pa2.getPrice().compareTo(pa1.getPrice());

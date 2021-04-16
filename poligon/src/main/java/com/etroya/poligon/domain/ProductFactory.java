@@ -135,7 +135,7 @@ public class ProductFactory {
                                             discount -> formatter.moneyFormat.format(discount)))
                     );
         } finally {
-            logger.log(Level.INFO);
+            logger.log(Level.INFO, "get discount method executed");
         }
 
     }
@@ -143,8 +143,8 @@ public class ProductFactory {
     public void printProduct(Predicate<ProductAbstract> filter, Comparator<ProductAbstract> sorter, String languageTag) {
         try {
             readLock.unlock();
-        } finally {
-            logger.log(Level.FINER);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         ;
 
@@ -156,10 +156,6 @@ public class ProductFactory {
                 .filter(filter)
                 .forEach(p -> txt.append(formatter.formatProduct(p) + '\n'));
         System.out.println(txt);
-    } finally
-
-    {
-        readLock.unlock();
     }
 
     public void printProductReport(int id, String languageTag, String client) {
