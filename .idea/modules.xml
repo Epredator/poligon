@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/basics/basics.iml" filepath="$PROJECT_DIR$/algorithms/basics/basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" filepath="$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thinkingInJava/mproject/mproject.iml" filepath="$PROJECT_DIR$/thinkingInJava/mproject/mproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/rxJava/rxJava.iml" filepath="$PROJECT_DIR$/algorithms/rxJava/rxJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" filepath="$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" />
     </modules>

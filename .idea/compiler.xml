@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mproject" />
         <module name="rxJava" />
         <module name="basics" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basics" target="1.5" />
+      <module name="mproject" target="15" />
       <module name="rxJava" target="8" />
     </bytecodeTargetLevel>
   </component>

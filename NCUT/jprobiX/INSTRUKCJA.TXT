@@ -1,7 +1,0 @@
-Aby uruchomić aplikację należy uruchomić plik JProbiX.jar. Aplikacja została zaprogramowana w języku Java oraz z użyciem biblioteki JFreechart
-
-
-Struktura katalogu:
--dist/JProbiX.jar <-aplikacja gotowa do uruchomienia
--img <-zrzuty ekranu z przyk³adami wprowadzonych danych
--src <-pliki źródłowe aplikacji
