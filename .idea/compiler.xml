@@ -6,15 +6,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mproject" />
-        <module name="rxJava" />
+        <module name="algorithms" />
+        <module name="pogodApp" />
         <module name="basics" />
+        <module name="dependency-injection-poligon" />
+        <module name="helidon-quickstart-se" />
+        <module name="TUL" />
+        <module name="reactivespring" />
+        <module name="poligon" />
+        <module name="rxJava" />
+        <module name="NCUT" />
+        <module name="thinkingInJava" />
+        <module name="spring-petclinic" />
+        <module name="GameOfLife" />
+        <module name="mproject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="algorithms" target="15" />
       <module name="basics" target="1.5" />
+      <module name="dependency-injection-poligon" target="15" />
+      <module name="GameOfLife" target="15" />
+      <module name="helidon-quickstart-se" target="15" />
       <module name="mproject" target="15" />
+      <module name="NCUT" target="15" />
+      <module name="one-parent" target="1.5" />
+      <module name="pogodApp" target="15" />
+      <module name="poligon" target="15" />
+      <module name="reactivespring" target="15" />
       <module name="rxJava" target="8" />
+      <module name="spring-petclinic" target="15" />
+      <module name="thinkingInJava" target="15" />
+      <module name="TUL" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
