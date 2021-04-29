@@ -2,22 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GameOfLife/GameOfLife.iml" filepath="$PROJECT_DIR$/GameOfLife/GameOfLife.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NCUT/NCUT.iml" filepath="$PROJECT_DIR$/NCUT/NCUT.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TUL/TUL.iml" filepath="$PROJECT_DIR$/TUL/TUL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GameOfLife/GameOfLife.iml" filepath="$PROJECT_DIR$/GameOfLife/GameOfLife.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/NCUT/NCUT.iml" filepath="$PROJECT_DIR$/NCUT/NCUT.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/TUL/TUL.iml" filepath="$PROJECT_DIR$/TUL/TUL.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/basics/basics.iml" filepath="$PROJECT_DIR$/algorithms/basics/basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" filepath="$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" filepath="$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" filepath="$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" filepath="$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" filepath="$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/thinkingInJava/mproject/mproject.iml" filepath="$PROJECT_DIR$/thinkingInJava/mproject/mproject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/one-parent.iml" filepath="$PROJECT_DIR$/one-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pogodApp/pogodApp.iml" filepath="$PROJECT_DIR$/pogodApp/pogodApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/poligon/poligon.iml" filepath="$PROJECT_DIR$/poligon/poligon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/reactivespring/reactivespring.iml" filepath="$PROJECT_DIR$/reactivespring/reactivespring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one-parent.iml" filepath="$PROJECT_DIR$/one-parent.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/pogodApp/pogodApp.iml" filepath="$PROJECT_DIR$/pogodApp/pogodApp.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/poligon/poligon.iml" filepath="$PROJECT_DIR$/poligon/poligon.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/reactivespring/reactivespring.iml" filepath="$PROJECT_DIR$/reactivespring/reactivespring.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/rxJava/rxJava.iml" filepath="$PROJECT_DIR$/algorithms/rxJava/rxJava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-petclinic/spring-petclinic.iml" filepath="$PROJECT_DIR$/spring-petclinic/spring-petclinic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" filepath="$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-petclinic/spring-petclinic.iml" filepath="$PROJECT_DIR$/spring-petclinic/spring-petclinic.iml" group="one-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" filepath="$PROJECT_DIR$/thinkingInJava/thinkingInJava.iml" group="one-parent and modules" />
     </modules>
   </component>
 </project>
