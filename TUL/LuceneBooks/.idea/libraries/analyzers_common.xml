@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="analyzers-common">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-common" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-icu" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-kuromoji" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-morfologik" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-phonetic" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-smartcn" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-stempel" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/analyzers-uima" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/benchmark" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/classification" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/codecs" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/core" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/demo" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/expressions" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/facet" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/grouping" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/highlighter" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/join" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/memory" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/misc" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/queries" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/queryparser" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/replicator" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/sandbox" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/spatial" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/suggest" />
+      <root url="jar://$USER_HOME$/Downloads/lucene-4.10.2.zip!/lucene-4.10.2/docs/test-framework" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

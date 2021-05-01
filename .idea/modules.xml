@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/NCUT/NCUT.iml" filepath="$PROJECT_DIR$/NCUT/NCUT.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/TUL/TUL.iml" filepath="$PROJECT_DIR$/TUL/TUL.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/algorithms/algorithms.iml" filepath="$PROJECT_DIR$/algorithms/algorithms.iml" group="one-parent and modules" />
-      <module fileurl="file://$PROJECT_DIR$/algorithms/basics/basics.iml" filepath="$PROJECT_DIR$/algorithms/basics/basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" filepath="$PROJECT_DIR$/dependency-injection-poligon/dependency-injection-poligon.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" filepath="$PROJECT_DIR$/helidon-quickstart-se/helidon-quickstart-se.iml" group="one-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" filepath="$PROJECT_DIR$/TUL/helloWorldApp/helloWorldApp.iml" />
