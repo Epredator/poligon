@@ -20,7 +20,6 @@ public class ImperativeVsDeclarativeEx1 {
         System.out.println("Sum declarative: " + sum);
     }
 
-
     public static void imperative(){
         int sum = IntStream.rangeClosed(1,100)
                 .sum();
